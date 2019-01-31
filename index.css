@@ -35,6 +35,97 @@
     font-family: "this";
     src: url("./assets/Fonts/This-Regular.otf")
 }
+/* nav */
+.navbar_{
+    width: 100%;
+    position: fixed;
+    height: 9vh;
+    z-index: 10;
+    background-color: #01B8F1;
+}
+.nav_{
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: 0 1rem;
+}
+.nav_logo{
+    margin-left: 1rem;
+}
+.nav_logo img {
+    padding: 1em;
+    color: white;
+    height: 20px;
+    width: 20px;
+}
+.nav_logo a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+.nav_items a{
+    color: #ffffff;
+    font-family: "Circular Std";
+    text-decoration: none;
+    font-weight: 100;
+    font-size: 12px;
+}
+.nav_items li:hover,
+.nav_items .active {
+    border-top: 5px solid #ffffff;
+    
+}
+.nav_items ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: baseline;
+}
+.nav_items li{
+    padding: 0 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.spacer{
+    flex: 1;
+}
+.nav_items .buy_now{
+    text-align: center;
+    color: #FFFFFF;	
+    font-family: "Circular Std";	
+    font-size: 9px;	
+    font-weight: bold;	
+    letter-spacing: 2.7px;	
+    line-height: 36px;	
+    height: 36px;	
+    width: 124px;	
+    border-radius: 18px;	
+    background-color: #037497;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.nav_items .fas{
+    color: #FFFFFF;
+    display: block;
+    align-self: center;	
+    margin-right: 2%;
+}
+@media (max-width:768px) {
+    .nav_items{
+        display: none;
+    }
+}
+@media (min-width:769px) {
+    .btn_nav{
+        display: none;
+    }
+}
+
 /* First Container */
 
 .first_cont{
@@ -445,6 +536,7 @@
     position: relative;
     width: 100%;
     height: 100vh;
+    z-index: 15;
 }
 .container_2{
     display: flex;
@@ -471,9 +563,12 @@
 .container_2 video {
     
     background-color: rgba(0,0,0,0);
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+   
 }
 .diive_2{
     align-self: flex-start;

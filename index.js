@@ -1,19 +1,45 @@
 var btn = document.querySelector('#plus_btn');
 btn.addEventListener('click',method1);
 btn.addEventListener('click',method2);
+btn.addEventListener('click',disableScroll);
 function method2(){
   div = document.getElementById('second_cont_alternative');
   div.style.display = "block";
+  
 }
 function method1(){
     div = document.getElementById('second_cont');
     div.style.display = "none";
+}
+function disableScroll() {
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
 }
 
 
 var btn = document.querySelector('#x_btn');
 btn.addEventListener('click',method3);
 btn.addEventListener('click',method4);
+btn.addEventListener('click',enableScroll);
 function method3(){
   div = document.getElementById('second_cont_alternative');
   div.style.display = "none";
@@ -22,7 +48,14 @@ function method4(){
     div = document.getElementById('second_cont');
     div.style.display = "flex";
 }
-
+function enableScroll() {
+  if (window.removeEventListener)
+      window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.onmousewheel = document.onmousewheel = null; 
+  window.onwheel = null; 
+  window.ontouchmove = null;  
+  document.onkeydown = null;  
+}
 //****************************SliderJS
 $(document).ready(function(){
 
@@ -112,7 +145,51 @@ $(document).ready(function(){
     });//prev
   //slideshow
   });
-  
+  // Cache selectors
+var lastId,
+topMenu = $("#top-menu"),
+topMenuHeight = topMenu.outerHeight()+15,
+// All list items
+menuItems = topMenu.find("a"),
+// Anchors corresponding to menu items
+scrollItems = menuItems.map(function(){
+  var item = $($(this).attr("href"));
+  if (item.length) { return item; }
+});
+
+// Bind click handler to menu items
+// so we can get a fancy scroll animation
+menuItems.click(function(e){
+var href = $(this).attr("href"),
+  offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+1;
+$('html, body').stop().animate({ 
+  scrollTop: offsetTop
+}, 300);
+e.preventDefault();
+});
+
+// Bind to scroll
+$(window).scroll(function(){
+// Get container scroll position
+var fromTop = $(this).scrollTop()+topMenuHeight;
+
+// Get id of current scroll item
+var cur = scrollItems.map(function(){
+ if ($(this).offset().top < fromTop)
+   return this;
+});
+// Get the id of the current element
+cur = cur[cur.length-1];
+var id = cur && cur.length ? cur[0].id : "";
+
+if (lastId !== id) {
+   lastId = id;
+   // Set/remove active class
+   menuItems
+     .parent().removeClass("active")
+     .end().filter("[href='#"+id+"']").parent().addClass("active");
+}                   
+ 
   /*
   JQUERY SLIDER BY JohnRostislavovich - https://codepen.io/JohnRostislavovich
   ALL YOU HAVE TO DO:
@@ -120,4 +197,4 @@ $(document).ready(function(){
   -include jquery lib
   -change the images
   */
-  
+});
