@@ -39,7 +39,7 @@
 .navbar_{
     width: 100%;
     position: fixed;
-    height: 9vh;
+    height: 65px;
     z-index: 10;
     background-color: #01B8F1;
 }
@@ -435,10 +435,18 @@
     opacity: 0.6;
     align-self: center;
 }
+.flex_2:hover {
+    opacity: 1;
+     width: 40%;
+     z-index: 10;
+     display: block;
+     -webkit-transition: all 0.25s ease;
+     
+ } 
 .idd{
     position: relative;
     left: 10%;
-    width: 60%;
+    width: 50%;
     text-align: left; 
     color: #DF1C24;	
     font-family: 'Oswald';	
@@ -458,6 +466,13 @@
     opacity: 0.6;
     align-self: flex-end;
 }
+.flex_3:hover {
+    opacity: 1;
+     width: 50%;
+     z-index: 10;
+     display: block;
+     -webkit-transition: all 0.25s ease;
+ } 
 .ipp{
     position: relative;
     left: 10%;
@@ -467,7 +482,7 @@
     font-size: 8vw;	
     letter-spacing: -5.5px;	
     line-height: 8vw;
-    width: 90%;
+    width: 60%;
 }
 .shadow{
     position: relative;
@@ -538,6 +553,23 @@
     height: 100vh;
     z-index: 15;
 }
+.second_cont_two{
+    display: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+}
+.second_cont_three{
+    display: none;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 15;
+}
+
 .container_2{
     display: flex;
     flex-flow: row nowrap;
@@ -545,7 +577,22 @@
     height: 100%;
     overflow: hidden;
     justify-content: flex-start;
-
+}
+.container_3{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: flex-start;
+}
+.container_4{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    justify-content: flex-start;
 }
 .close{
     top: 0;
@@ -561,6 +608,26 @@
     color: #A6A6A6
 }
 .container_2 video {
+    
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+   
+}
+.container_3 video {
+    
+    background-color: rgba(0,0,0,0);
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+   
+}
+.container_4 video {
     
     background-color: rgba(0,0,0,0);
     position: fixed;

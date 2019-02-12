@@ -56,6 +56,133 @@ function enableScroll() {
   window.ontouchmove = null;  
   document.onkeydown = null;  
 }
+
+
+
+
+var btn = document.querySelector('#plus_btn_two');
+btn.addEventListener('click',method5);
+btn.addEventListener('click',method6);
+btn.addEventListener('click',disableScroll);
+function method5(){
+  div = document.getElementById('second_cont_two');
+  div.style.display = "block";
+  
+}
+function method6(){
+    div = document.getElementById('second_cont');
+    div.style.display = "none";
+}
+function disableScroll() {
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+
+var btn = document.querySelector('#x_btn_two');
+btn.addEventListener('click',method7);
+btn.addEventListener('click',method8);
+btn.addEventListener('click',enableScroll);
+function method7(){
+  div = document.getElementById('second_cont_two');
+  div.style.display = "none";
+}
+function method8(){
+    div = document.getElementById('second_cont');
+    div.style.display = "flex";
+}
+function enableScroll() {
+  if (window.removeEventListener)
+      window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.onmousewheel = document.onmousewheel = null; 
+  window.onwheel = null; 
+  window.ontouchmove = null;  
+  document.onkeydown = null;  
+}
+
+
+
+
+
+var btn = document.querySelector('#plus_btn_three');
+btn.addEventListener('click',method9);
+btn.addEventListener('click',method10);
+btn.addEventListener('click',disableScroll);
+function method9(){
+  div = document.getElementById('second_cont_three');
+  div.style.display = "block";
+  
+}
+function method10(){
+    div = document.getElementById('second_cont');
+    div.style.display = "none";
+}
+function disableScroll() {
+  if (window.addEventListener) // older FF
+      window.addEventListener('DOMMouseScroll', preventDefault, false);
+  window.onwheel = preventDefault; // modern standard
+  window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+  window.ontouchmove  = preventDefault; // mobile
+  document.onkeydown  = preventDefaultForScrollKeys;
+}
+var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+    }
+}
+
+
+var btn = document.querySelector('#x_btn_three');
+btn.addEventListener('click',method11);
+btn.addEventListener('click',method12);
+btn.addEventListener('click',enableScroll);
+function method11(){
+  div = document.getElementById('second_cont_three');
+  div.style.display = "none";
+}
+function method12(){
+    div = document.getElementById('second_cont');
+    div.style.display = "flex";
+}
+function enableScroll() {
+  if (window.removeEventListener)
+      window.removeEventListener('DOMMouseScroll', preventDefault, false);
+  window.onmousewheel = document.onmousewheel = null; 
+  window.onwheel = null; 
+  window.ontouchmove = null;  
+  document.onkeydown = null;  
+}
+
+
 //****************************SliderJS
 $(document).ready(function(){
 
