@@ -1183,6 +1183,8 @@
     letter-spacing: -1px;	
   
 }
+#txt_2{display: none;}
+
 .c_logos{
     margin-top: 10vh;
     display: flex;
@@ -1190,22 +1192,24 @@
     align-items: center;
     
 }
-.google{
+#google{
     height: 2vw;	
     width: 8vw;
     flex: 1 1 auto;
-    margin-right: 60px
-    
+    margin-right: 60px;   
 }
-.redbull{
-
+#redbull{
     height: 2vw;	
     width: 8vw;
     opacity: 0.17;
-    flex: 1 1 auto
-    
+    flex: 1 1 auto;
 }
-
+#google:hover{
+    opacity: 1 !important;
+}
+#redbull:hover{
+    opacity: 1 !important;
+}
 .pink_4yc{
     margin-top: 10vh;	
     margin-bottom: 10vh;

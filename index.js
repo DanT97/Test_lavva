@@ -317,11 +317,59 @@ if (lastId !== id) {
      .end().filter("[href='#"+id+"']").parent().addClass("active");
 }                   
  
-  /*
-  JQUERY SLIDER BY JohnRostislavovich - https://codepen.io/JohnRostislavovich
-  ALL YOU HAVE TO DO:
-  -copy the whole code html, css & js
-  -include jquery lib
-  -change the images
-  */
 });
+///////////////////////////
+var btn = document.querySelector('#google');
+btn.addEventListener('click',google_active);
+btn.addEventListener('click',text_active);
+btn.addEventListener('click',redbull_off);
+btn.addEventListener('click',redbull_text_off);
+function text_active(){
+  div = document.getElementById('txt_1');
+  div.style.display = "block";  
+}
+function google_active(){
+    div = document.getElementById('google');
+    div.style.opacity="1";
+}
+function redbull_off(){
+  div = document.getElementById('redbull');
+  div.style.opacity="0.17"
+}
+function redbull_text_off(){
+  div = document.getElementById('txt_2');
+  div.style.display = "none";  
+}
+
+
+
+
+
+var btn = document.querySelector('#redbull');
+btn.addEventListener('click',redbull_active);
+btn.addEventListener('click',redbull_text_on);
+btn.addEventListener('click',google_off);
+btn.addEventListener('click',google_text_off);
+function redbull_text_on(){
+  div = document.getElementById('txt_2');
+  div.style.display = "block";  
+}
+function redbull_active(){
+  div = document.getElementById('redbull');
+  div.style.opacity="1";
+}
+function google_off(){
+  div = document.getElementById('google');
+  div.style.opacity="0.17"
+}
+function google_text_off(){
+  div = document.getElementById('txt_1');
+  div.style.display = "none";  
+}
+/*$(document).ready(function(){
+  $('.c_logos a').click(function(){
+    $('a').removeClass("active");
+    $('#txt')
+    $(this).addClass("active");
+});
+});*/
