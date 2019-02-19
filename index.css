@@ -1233,13 +1233,11 @@
     .text_{
         font-size: 30px;	
     }
-    .google{
-        height: 30px;	
-        width:100px;
+    #google{
+        width:15vw;
     }
-    .redbull{
-        height: 30px;	
-        width:100px; 
+    #redbull{
+        width:15vw; 
     }
     .pink_4yc{
         font-size: 12px;	
@@ -1257,13 +1255,11 @@
     .text_{
         font-size: 20px;	
     }
-    .google{
-        height: 20px;	
-        width: 80px;
+    #google{
+        width: 18vw;
     }
-    .redbull{
-        height: 20px;	
-        width: 80px; 
+    #redbull{	
+        width:18vw; 
     }
     .pink_4yc{
         font-size: 10px;	
